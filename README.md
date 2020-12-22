@@ -1,27 +1,60 @@
 # FindYourSound
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
 
-## Development server
+<h3 align="center">
+  Find Your Sound
+</h3>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
 
-## Code scaffolding
+## :rocket: Sobre a aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Encontre a sua música perfeita usando Angular :smile:
 
-## Build
+## Tecnologias utilizadas :memo:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+- [Angular](https://angular.io)
+- [TypeScript](https://www.typescriptlang.org)
+- [ngx-toastr](https://ngx-toastr.vercel.app)
+- [Angular CLI](https://cli.angular.io)
+- [Node](https://nodejs.org/en/)
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
-## Running unit tests
+## Como utilizar 🤔
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+É necessário que você tenha o `angular-cli` instalado em sua máquina para que você consiga utilizar o `ng serve`, para subir o seu projeto.
 
-## Running end-to-end tests
+Para insalar basta rodar o comando abaixo:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+npm install -g @angular/cli
+```
 
-## Further help
+Agora clone este repositório.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+git clone https://github.com/ruanvalente/find-your-sound
+```
+
+Entre na pasta `find-your-sound` e rode o comando `yarn` ou `npm install`, para instalar as dependências do projeto.
+
+Agora é só rodar o comando `ng serve` dentro da pasta do projeto !
+
+```
+cd github-explore-angular
+
+ng serve
+```
+
+Pronto ! Agora basta acessar `http://localhost:4200` :smile:
+
+## Veja a aplicação no ar :tada:
+
+Em breve 🤫
+
+E agora é só se divertir :smile:
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
