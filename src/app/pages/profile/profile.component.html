@@ -1,1 +1,21 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="content">
+    <header>
+      <img src="../../../assets/default-image.jpg" alt="Default image" />
+      <div>
+        <strong>Desconhecido</strong>
+      </div>
+    </header>
+
+    <form>
+      <input
+        type="text"
+        placeholder="Digite sua música/artista"
+        [(ngModel)]="search"
+        name="search"
+      />
+      <button type="submit">Buscar</button>
+    </form>
+    <span>Por favor, entre com seu artista</span>
+  </div>
+</div>
