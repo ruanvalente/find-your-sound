@@ -60,6 +60,10 @@
       color: #263238;
       transition: all 0.2s;
 
+      &.error-input {
+        border-color: #c53030;
+      }
+
       &:focus {
         border-color: #92e3a9;
       }
@@ -92,5 +96,11 @@
     margin-top: 20px;
     font-weight: bold;
     color: #263238;
+
+    &.error {
+      display: block;
+      color: #c53030;
+      margin-top: 10px;
+    }
   }
 }

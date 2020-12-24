@@ -7,15 +7,22 @@
       </div>
     </header>
 
-    <form>
+    <form novalidate [formGroup]="form" (ngSubmit)="submit()">
       <input
+        id="search"
+        name="search"
         type="text"
         placeholder="Digite sua música/artista"
+        formControlName="search"
         [(ngModel)]="search"
-        name="search"
+        [ngClass]="{ 'error-input': f.search.touched && f.search.invalid }"
       />
-      <button type="submit">Buscar</button>
+      <button type="submit" [disabled]="search.length === 0">Buscar</button>
     </form>
-    <span>Por favor, entre com seu artista</span>
+    <span
+      *ngIf="f.search.touched && f.search.invalid"
+      [ngClass]="{ error: f.search.invalid }"
+      >Por favor, entre com seu artista</span
+    >
   </div>
 </div>
