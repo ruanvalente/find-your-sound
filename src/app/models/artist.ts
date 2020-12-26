@@ -1,6 +1,6 @@
 import { Items } from './item';
 
-export interface Artist {
+export interface Artists {
   href: string;
   items: Array<Items>;
 }
