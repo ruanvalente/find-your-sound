@@ -1,28 +1,30 @@
 <div class="container">
   <div class="content">
     <header>
-      <img src="../../../assets/default-image.jpg" alt="Default image" />
+      <img
+        [src]="
+          user?.images[0].url
+            ? user?.images[0].url
+            : '../../../assets/default-image.jpg'
+        "
+        [alt]="user?.display_name"
+      />
       <div>
-        <strong>Desconhecido</strong>
+        <strong>{{ user?.display_name }}</strong>
       </div>
     </header>
 
-    <form novalidate [formGroup]="form" (ngSubmit)="submit()">
+    <form novalidate (ngSubmit)="submit()">
       <input
         id="search"
         name="search"
         type="text"
         placeholder="Digite sua música/artista"
-        formControlName="search"
         [(ngModel)]="search"
-        [ngClass]="{ 'error-input': f.search.touched && f.search.invalid }"
+        [ngClass]="hasError ? 'error-input' : ''"
       />
       <button type="submit" [disabled]="search.length === 0">Buscar</button>
     </form>
-    <span
-      *ngIf="f.search.touched && f.search.invalid"
-      [ngClass]="{ error: f.search.invalid }"
-      >Por favor, entre com seu artista</span
-    >
+    <span class="error" *ngIf="hasError">Por favor, entre com seu artista</span>
   </div>
 </div>

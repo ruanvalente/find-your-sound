@@ -1,5 +1,6 @@
+import { Users } from './../../models/user';
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile',
@@ -9,31 +10,22 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ProfileComponent implements OnInit {
   search: string = '';
   hasError: boolean = false;
-  form: FormGroup;
+  user: Users = null;
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      search: new FormControl('', [
-        Validators.required,
-        Validators.minLength(5),
-      ]),
+    this.apiService.getUserData().subscribe({
+      next: (value) => (this.user = value),
     });
   }
 
-  get f() {
-    return this.form.controls;
-  }
-
   submit() {
-    console.log(this.form.value);
+    console.log(this.search);
     this.clearForm();
   }
 
   clearForm() {
-    this.form.setValue({
-      search: '',
-    });
+    this.search = '';
   }
 }
