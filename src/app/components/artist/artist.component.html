@@ -1,0 +1,18 @@
+<section class="artist">
+  <div class="artist-content">
+    <a href="#" *ngFor="let item of artists?.items">
+      <img
+        [src]="
+          item?.images[0]?.url
+            ? item?.images[0]?.url
+            : '../../../assets/default-image.jpg'
+        "
+        [alt]="item?.name"
+      />
+      <div>
+        <strong>{{ item?.name }}</strong>
+        <p>Artista</p>
+      </div>
+    </a>
+  </div>
+</section>

@@ -14,8 +14,9 @@ export class ProfileComponent implements OnInit {
   loading: boolean = false;
   hasError: boolean = false;
   user: Users = null;
-  artists: Artists = null;
-  tracks: Tracks = null;
+
+  artists: Artists;
+  tracks: Tracks;
 
   constructor(private apiService: ApiService) {}
 
@@ -35,8 +36,6 @@ export class ProfileComponent implements OnInit {
       next: (value) => {
         this.artists = value.artists;
         this.tracks = value.tracks;
-
-        console.log(this.artists);
         console.log(this.tracks);
       },
       error: (error) => {
