@@ -10,8 +10,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { TracksComponent } from './components/tracks/tracks.component';
+
 import { FormatDatePipe } from './pipes/format-date.pipe';
 
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +30,7 @@ import { FormatDatePipe } from './pipes/format-date.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ScrollToModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

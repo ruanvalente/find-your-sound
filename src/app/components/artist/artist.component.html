@@ -1,6 +1,6 @@
 <section class="artist">
   <div class="artist-content">
-    <a href="#" *ngFor="let item of artists?.items">
+    <a [ngxScrollTo]="'#refs'" *ngFor="let item of artists?.items">
       <img
         [src]="
           item?.images[0]?.url
