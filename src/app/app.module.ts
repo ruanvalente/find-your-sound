@@ -10,6 +10,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { LoadingComponent } from './shared/loading/loading.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { TracksComponent } from './components/tracks/tracks.component';
+import { FormatDatePipe } from './pipes/format-date.pipe';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { TracksComponent } from './components/tracks/tracks.component';
     LoadingComponent,
     ArtistComponent,
     TracksComponent,
+    FormatDatePipe,
   ],
   imports: [
     BrowserModule,
