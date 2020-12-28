@@ -8,16 +8,19 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   height: 100vh;
 }
 
 body {
-  background: #e9f9ee url('./assets/Playing\ Music-bro.svg') no-repeat 80% top;
+  background: #e9f9ee url("./assets/Playing\ Music-bro.svg") no-repeat 80% top;
   --webkit-font-smoothing: antialiased;
 }
 
-body, input, button {
+body,
+input,
+button {
   font-size: 16px;
   font-family: Roboto, sans-serif;
 }
@@ -30,6 +33,11 @@ body, input, button {
 
 button {
   cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.8;
+  cursor: progress;
 }
 
 h2 {
