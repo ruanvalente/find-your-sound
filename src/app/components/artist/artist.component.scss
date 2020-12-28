@@ -13,6 +13,12 @@
     grid-template-columns: repeat(2, 1fr);
     margin: 16px 0px;
 
+    @media (max-width: 500px) {
+      & {
+        grid-template-columns: 1fr;
+      }
+    }
+
     a {
       width: 100%;
       padding: 24px;
