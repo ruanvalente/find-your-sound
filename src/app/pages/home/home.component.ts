@@ -1,5 +1,5 @@
-import { environment } from './../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  loading: boolean = false;
+
+  constructor(private activatedRouter: ActivatedRoute) {}
+  ngOnInit(): void {
+    this.loading = true;
+
+    if (this.activatedRouter.snapshot.params.get('/profile')) {
+      this.loading = false;
+    }
+  }
 }
