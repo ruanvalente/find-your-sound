@@ -1,7 +1,7 @@
 <section class="tracks" id="refs">
   <div *ngFor="let item of tracks?.items">
     <a
-      href="https://open.spotify.com/track/"
+      [href]="'https://open.spotify.com/track/' + item.id"
       target="_blank"
       rel="noopener noreferrer"
     >
