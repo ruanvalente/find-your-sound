@@ -5,6 +5,17 @@
   grid-template-columns: 1fr;
   grid-gap: 20px;
 
+  div {
+    display: flex;
+    justify-content: space-between;
+
+    #button {
+      height: 72px;
+      font-size: 14px;
+      border-radius: 4px;
+    }
+  }
+
   a {
     background: #fff;
     border-radius: 5px;
