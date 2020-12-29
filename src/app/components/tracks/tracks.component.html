@@ -1,7 +1,9 @@
 <section class="tracks" id="refs">
   <div>
     <h2>Músicas</h2>
-    <button id="button">Carregar playlist</button>
+    <button id="button" (click)="handleLoadPlaylist()">
+      Carregar playlist
+    </button>
   </div>
   <div *ngFor="let item of tracks?.items">
     <a

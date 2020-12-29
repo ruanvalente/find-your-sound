@@ -30,8 +30,9 @@
 
     <app-artist *ngIf="artists" [artists]="artists"></app-artist>
     <app-tracks *ngIf="tracks" [tracks]="tracks"></app-tracks>
+
     <app-playlist
-      *ngIf="playlist.length > 0; else elseBlock"
+      *ngIf="playlist; else elseBlock"
       [playlist]="playlist"
     ></app-playlist>
 

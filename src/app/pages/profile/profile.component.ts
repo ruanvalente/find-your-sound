@@ -45,7 +45,6 @@ export class ProfileComponent implements OnInit {
       next: (value) => {
         this.artists = value.artists;
         this.tracks = value.tracks;
-        console.log(this.tracks);
       },
       error: (error) => {
         this.hasError = true;
@@ -54,7 +53,6 @@ export class ProfileComponent implements OnInit {
       complete: () => {
         this.hasError = false;
         this.loading = false;
-        console.log('tudo certinho');
       },
     });
 

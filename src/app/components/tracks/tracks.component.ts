@@ -19,16 +19,29 @@ export class TracksComponent implements OnInit {
 
   handleAddPlaylist(event, data: any): void {
     event.preventDefault();
-    this.playlist.unshift([
-      {
-        data: {
-          images: data.album.images,
-          name: data.name,
-          release_date: data.album.release_date,
-          id: data.id,
-        },
+    this.playlist.push({
+      data: {
+        images: data.album.images,
+        name: data.name,
+        release_date: data.album.release_date,
+        id: data.id,
       },
-    ]);
+    });
+
     this.storagedService.saveData('@FindYourSound::Playlist', this.playlist);
+  }
+
+  handleLoadPlaylist() {
+    // debugger;
+    this.tracks = null;
+    this.storagedService.loadingPlaylist.subscribe({
+      next: (value) => {
+        this.playlist = [...this.playlist, value];
+      },
+      error: (error) => console.error(error),
+      complete: () => console.log('tudo opk'),
+    });
+
+    console.log(this.playlist);
   }
 }

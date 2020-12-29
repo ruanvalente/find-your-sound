@@ -10,11 +10,5 @@ export class HomeComponent implements OnInit {
   loading: boolean = false;
 
   constructor(private activatedRouter: ActivatedRoute) {}
-  ngOnInit(): void {
-    this.loading = true;
-
-    if (this.activatedRouter.snapshot.params.get('/profile')) {
-      this.loading = false;
-    }
-  }
+  ngOnInit(): void {}
 }
