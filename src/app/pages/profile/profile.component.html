@@ -28,7 +28,17 @@
     <app-loading *ngIf="loading"></app-loading>
     <span class="error" *ngIf="hasError">Por favor, entre com seu artista</span>
 
-    <app-artist [artists]="artists"></app-artist>
-    <app-tracks [tracks]="tracks"></app-tracks>
+    <app-artist *ngIf="artists" [artists]="artists"></app-artist>
+    <app-tracks *ngIf="tracks" [tracks]="tracks"></app-tracks>
+    <app-playlist
+      *ngIf="playlist.length > 0; else elseBlock"
+      [playlist]="playlist"
+    ></app-playlist>
+
+    <ng-template #elseBlock>
+      <h3 style="margin-top: 40px; max-width: 433px; font-size: 32px">
+        Parece que você ainda não achou o seu som.... <br />vamos encontrar ?
+      </h3>
+    </ng-template>
   </div>
 </div>
