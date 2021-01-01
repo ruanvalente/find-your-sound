@@ -6,15 +6,11 @@ import { Component, Input, OnChanges, OnInit } from '@angular/core';
   templateUrl: './artist.component.html',
   styleUrls: ['./artist.component.scss'],
 })
-export class ArtistComponent implements OnInit, OnChanges {
+export class ArtistComponent implements OnInit {
   @Input() artists: Artists;
   loading: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  ngOnChanges(): void {
-    console.log(this.artists);
-  }
 }

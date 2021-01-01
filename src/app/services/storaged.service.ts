@@ -5,14 +5,12 @@ import { Injectable, EventEmitter } from '@angular/core';
   providedIn: 'root',
 })
 export class StoragedService {
-  loadingPlaylist = new EventEmitter<Tracks[]>();
-
+  changeData = new EventEmitter<any>();
   constructor() {}
 
   saveData(key: string, data: any): void {
-    localStorage.setItem(key, JSON.stringify(data as []));
-    console.log(data);
-    this.loadingPlaylist.emit(data);
+    localStorage.setItem(key, JSON.stringify(data));
+    this.changeData.emit(data);
   }
 
   getData(key: string): any {

@@ -1,4 +1,6 @@
-<h2>Sua playlist</h2>
+<div *ngIf="playlist.length > 0">
+  <h2>Sua playlist</h2>
+</div>
 
 <section class="tracks">
   <div *ngFor="let playlistItem of playlist">

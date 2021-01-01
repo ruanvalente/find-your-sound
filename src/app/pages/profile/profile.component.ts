@@ -40,7 +40,6 @@ export class ProfileComponent implements OnInit {
 
   submit() {
     this.loading = true;
-    console.log(this.search);
     this.apiService.handleSearch(this.search).subscribe({
       next: (value) => {
         this.artists = value.artists;
