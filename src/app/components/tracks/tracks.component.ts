@@ -1,4 +1,3 @@
-import { Artists } from './../../models/artist';
 import { Component, Input, OnInit, Output } from '@angular/core';
 
 import { StoragedService } from 'src/app/services/storaged.service';
@@ -33,11 +32,10 @@ export class TracksComponent implements OnInit {
 
   handleLoadPlaylist() {
     this.tracks = null;
-    this.storagedService.changeData.subscribe({
-      next: (value) => {
-        this.playlist = value;
-        this.storagedService.getData('@FindYourSound::Playlist');
-      },
-    });
+    this.playlist = [
+      ...this.storagedService.getData('@FindYourSound::Playlist'),
+    ];
+    document.location.reload(true);
+    console.log('load', this.playlist);
   }
 }

@@ -29,7 +29,7 @@
     <span class="error" *ngIf="hasError">Por favor, entre com seu artista</span>
 
     <app-artist
-      *ngIf="artists || playlist > 0"
+      *ngIf="artists && playlist > 0"
       [artists]="artists"
     ></app-artist>
     <app-tracks *ngIf="tracks" [tracks]="tracks"></app-tracks>
