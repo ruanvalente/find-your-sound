@@ -1,4 +1,10 @@
 <section class="tracks" id="refs">
+  <div *ngIf="playlist">
+    <h2>Músicas</h2>
+    <button id="button" (click)="handleLoadPlaylist()">
+      Carregar playlist
+    </button>
+  </div>
   <div *ngFor="let item of tracks?.items">
     <a
       [href]="'https://open.spotify.com/track/' + item.id"
@@ -21,7 +27,9 @@
     </a>
 
     <div>
-      <button>Adicionar a playlist</button>
+      <button (click)="handleAddPlaylist($event, item)">
+        Adicionar a playlist
+      </button>
     </div>
   </div>
 </section>

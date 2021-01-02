@@ -14,6 +14,7 @@ import { TracksComponent } from './components/tracks/tracks.component';
 import { FormatDatePipe } from './pipes/format-date.pipe';
 
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { PlaylistComponent } from './components/playlist/playlist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     ArtistComponent,
     TracksComponent,
     FormatDatePipe,
+    PlaylistComponent,
   ],
   imports: [
     BrowserModule,

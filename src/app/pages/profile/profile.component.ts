@@ -1,3 +1,4 @@
+import { StoragedService } from './../../services/storaged.service';
 import { Tracks } from './../../models/track';
 import { Artists } from './../../models/artist';
 import { Users } from './../../models/user';
@@ -17,11 +18,19 @@ export class ProfileComponent implements OnInit {
 
   artists: Artists;
   tracks: Tracks;
+  playlist: any = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private storagedService: StoragedService
+  ) {}
 
   ngOnInit(): void {
     this.loading = true;
+
+    this.playlist =
+      this.storagedService.getData('@FindYourSound::Playlist') || [];
+
     this.apiService.getUserData().subscribe({
       next: (value) => (this.user = value),
       error: (error) => console.error(error),
@@ -31,12 +40,10 @@ export class ProfileComponent implements OnInit {
 
   submit() {
     this.loading = true;
-    console.log(this.search);
     this.apiService.handleSearch(this.search).subscribe({
       next: (value) => {
         this.artists = value.artists;
         this.tracks = value.tracks;
-        console.log(this.tracks);
       },
       error: (error) => {
         this.hasError = true;
@@ -45,7 +52,6 @@ export class ProfileComponent implements OnInit {
       complete: () => {
         this.hasError = false;
         this.loading = false;
-        console.log('tudo certinho');
       },
     });
 
