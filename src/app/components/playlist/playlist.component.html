@@ -1,0 +1,23 @@
+<div *ngIf="playlist.length > 0">
+  <h2>Sua playlist</h2>
+</div>
+
+<section class="tracks">
+  <div *ngFor="let playlistItem of playlist">
+    <a
+      [href]="'https://open.spotify.com/track/' + playlistItem.data?.id"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        [src]="playlistItem.data?.images[0].url"
+        [alt]="playlistItem.data?.name"
+      />
+
+      <section>
+        <strong>{{ playlistItem.data?.name }}</strong>
+        <p>{{ playlistItem.data?.release_date | formatDate }}</p>
+      </section>
+    </a>
+  </div>
+</section>

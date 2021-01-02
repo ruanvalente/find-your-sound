@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="content">
+    <header>
+      <img
+        [src]="
+          user?.images[0].url
+            ? user?.images[0].url
+            : '../../../assets/default-image.jpg'
+        "
+        [alt]="user?.display_name"
+      />
+      <div>
+        <strong>{{ user?.display_name }}</strong>
+      </div>
+    </header>
+
+    <form novalidate (ngSubmit)="submit()">
+      <input
+        id="search"
+        name="search"
+        type="text"
+        placeholder="Digite sua música/artista"
+        [(ngModel)]="search"
+        [ngClass]="hasError ? 'error-input' : ''"
+      />
+      <button type="submit" [disabled]="search.length === 0">Buscar</button>
+    </form>
+    <app-loading *ngIf="loading"></app-loading>
+    <span class="error" *ngIf="hasError">Por favor, entre com seu artista</span>
+
+    <app-artist
+      *ngIf="artists && playlist > 0"
+      [artists]="artists"
+    ></app-artist>
+    <app-tracks *ngIf="tracks" [tracks]="tracks"></app-tracks>
+
+    <app-playlist
+      *ngIf="playlist; else elseBlock"
+      [playlist]="playlist"
+    ></app-playlist>
+
+    <ng-template #elseBlock>
+      <h3 style="margin-top: 40px; max-width: 433px; font-size: 32px">
+        Vamos encontrar<br />
+        o seu som ?
+      </h3>
+    </ng-template>
+  </div>
+</div>

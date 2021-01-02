@@ -1,0 +1,35 @@
+<section class="tracks" id="refs">
+  <div *ngIf="playlist">
+    <h2>Músicas</h2>
+    <button id="button" (click)="handleLoadPlaylist()">
+      Carregar playlist
+    </button>
+  </div>
+  <div *ngFor="let item of tracks?.items">
+    <a
+      [href]="'https://open.spotify.com/track/' + item.id"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img
+        [src]="
+          item?.album?.images[0].url
+            ? item?.album?.images[0].url
+            : '../../../assets/default-image.jpg'
+        "
+        [alt]="item?.name"
+      />
+
+      <section>
+        <strong>{{ item?.name }}</strong>
+        <p>{{ item?.album.release_date | formatDate }}</p>
+      </section>
+    </a>
+
+    <div>
+      <button (click)="handleAddPlaylist($event, item)">
+        Adicionar a playlist
+      </button>
+    </div>
+  </div>
+</section>
