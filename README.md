@@ -3,6 +3,7 @@
 Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 11.0.5.
 
 <h3 align="center">
+  <img src="https://i.postimg.cc/nrbN4hC1/screen.png" alt="Find Your Sound" />
   Find Your Sound
 </h3>
 
@@ -10,7 +11,7 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 
 ## :rocket: Sobre a aplicação
 
-Encontre a sua música perfeita usando Angular :smile:
+Encontre a sua música perfeita no spotify usando Angular :smile:
 
 ## Tecnologias utilizadas :memo:
 
@@ -42,7 +43,7 @@ Entre na pasta `find-your-sound` e rode o comando `yarn` ou `npm install`, para 
 Agora é só rodar o comando `ng serve` dentro da pasta do projeto !
 
 ```
-cd github-explore-angular
+cd find-your-sound
 
 ng serve
 ```
