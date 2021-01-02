@@ -52,7 +52,7 @@ Pronto ! Agora basta acessar `http://localhost:4200` :smile:
 
 ## Veja a aplicação no ar :tada:
 
-Em breve 🤫
+[Find Your Sound 😁](https://find-your-sound.vercel.app/)
 
 E agora é só se divertir :smile:
 
